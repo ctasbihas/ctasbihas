@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Heart, Linkedin, Mail, Twitter } from "lucide-react";
+import { Link } from "react-router";
 
 const socialLinks = [
 	{ name: "GitHub", icon: Github, href: "https://github.com/ctasbihas" },
@@ -64,12 +65,12 @@ export default function Footer() {
 						<ul className="space-y-2">
 							{quickLinks.map((link) => (
 								<li key={link.name}>
-									<a
-										href={link.href}
+									<Link
+										to={link.href}
 										className="text-muted-foreground hover:text-foreground transition-colors animated-underline"
 									>
 										{link.name}
-									</a>
+									</Link>
 								</li>
 							))}
 						</ul>

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { Download, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 // Temporary navItems
 const navItems = [
@@ -11,29 +12,6 @@ const navItems = [
 	{ name: "Projects", href: "#projects" },
 	{ name: "Contact", href: "#contact" },
 ];
-
-// Temporary Link component using <a>
-function Link({
-	to,
-	className,
-	children,
-	onClick,
-}: {
-	to: string;
-	className?: string;
-	children: React.ReactNode;
-	onClick?: () => void;
-}) {
-	return (
-		<a
-			href={to}
-			className={className}
-			onClick={onClick}
-		>
-			{children}
-		</a>
-	);
-}
 
 export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);

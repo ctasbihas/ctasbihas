@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { Link } from "react-router";
 
 const featuredProjects = [
 	{
@@ -36,17 +37,6 @@ const featuredProjects = [
 		githubUrl: "https://github.com/ctasbihas/librium",
 	},
 ];
-
-const Link = ({ children, to }: { children: React.ReactNode; to: string }) => {
-	return (
-		<a
-			href={to}
-			style={{ textDecoration: "none" }}
-		>
-			{children}
-		</a>
-	);
-};
 
 export default function FeaturedProjects() {
 	return (
