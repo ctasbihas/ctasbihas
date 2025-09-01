@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Portfolio Design System - All colors MUST be HSL */
+
+@layer base {
+	:root {
+		/* Base colors - Professional dark theme */
+		--background: 220 26% 5%;
+		--foreground: 210 40% 98%;
+
+		--card: 220 26% 8%;
+		--card-foreground: 210 40% 98%;
+
+		--popover: 220 26% 8%;
+		--popover-foreground: 210 40% 98%;
+
+		/* Primary - Elegant blue gradient */
+		--primary: 237 92% 65%;
+		--primary-foreground: 220 26% 5%;
+		--primary-glow: 249 86% 70%;
+
+		/* Secondary - Muted contrast */
+		--secondary: 220 20% 15%;
+		--secondary-foreground: 210 40% 98%;
+
+		/* Muted tones */
+		--muted: 220 20% 12%;
+		--muted-foreground: 215 20% 65%;
+
+		/* Accent - Purple gradient complement */
+		--accent: 249 86% 70%;
+		--accent-foreground: 220 26% 5%;
+
+		--destructive: 0 84% 60%;
+		--destructive-foreground: 210 40% 98%;
+
+		--border: 220 20% 15%;
+		--input: 220 20% 12%;
+		--ring: 237 92% 65%;
+
+		--radius: 0.75rem;
+
+		/* Custom design tokens */
+		--hero-gradient: linear-gradient(
+			135deg,
+			hsl(237 92% 65%),
+			hsl(249 86% 70%)
+		);
+		--card-gradient: linear-gradient(
+			135deg,
+			hsl(220 26% 8% / 0.8),
+			hsl(220 20% 12% / 0.4)
+		);
+		--text-gradient: linear-gradient(
+			135deg,
+			hsl(237 92% 65%),
+			hsl(249 86% 70%)
+		);
+
+		/* Shadows */
+		--shadow-primary: 0 10px 40px hsl(237 92% 65% / 0.3);
+		--shadow-card: 0 4px 20px hsl(220 26% 5% / 0.4);
+		--shadow-glow: 0 0 30px hsl(237 92% 65% / 0.5);
+
+		/* Animations */
+		--transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		--transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+		--sidebar-background: 0 0% 98%;
+
+		--sidebar-foreground: 240 5.3% 26.1%;
+
+		--sidebar-primary: 240 5.9% 10%;
+
+		--sidebar-primary-foreground: 0 0% 98%;
+
+		--sidebar-accent: 240 4.8% 95.9%;
+
+		--sidebar-accent-foreground: 240 5.9% 10%;
+
+		--sidebar-border: 220 13% 91%;
+
+		--sidebar-ring: 217.2 91.2% 59.8%;
+	}
+
+	/* Light mode override - keeping dark as default for professional look */
+	.light {
+		--background: 210 40% 98%;
+		--foreground: 220 26% 5%;
+		--card: 0 0% 100%;
+		--card-foreground: 220 26% 5%;
+		--primary: 237 92% 55%;
+		--primary-foreground: 210 40% 98%;
+		--secondary: 220 20% 95%;
+		--secondary-foreground: 220 26% 5%;
+		--muted: 220 20% 96%;
+		--muted-foreground: 215 20% 45%;
+		--accent: 249 86% 60%;
+		--accent-foreground: 210 40% 98%;
+		--border: 220 20% 90%;
+		--input: 220 20% 95%;
+		--ring: 237 92% 55%;
+
+		--shadow-primary: 0 10px 40px hsl(237 92% 55% / 0.2);
+		--shadow-card: 0 4px 20px hsl(220 26% 5% / 0.1);
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground font-sans antialiased;
+		font-feature-settings: "rlig" 1, "calt" 1;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer components {
+	/* Hero text gradient */
+	.text-gradient {
+		background: var(--text-gradient);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	/* Card with gradient background */
+	.card-gradient {
+		background: var(--card-gradient);
+		backdrop-filter: blur(20px);
+		border: 1px solid hsl(var(--border));
+	}
+
+	/* Glowing button effect */
+	.btn-glow {
+		box-shadow: var(--shadow-primary);
+		transition: var(--transition-smooth);
+	}
+
+	.btn-glow:hover {
+		box-shadow: var(--shadow-glow);
+		transform: translateY(-2px);
+	}
+
+	/* Section spacing */
+	.section-padding {
+		@apply py-20 px-4 md:px-8 lg:px-12;
+	}
+
+	/* Animated underline */
+	.animated-underline {
+		@apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
+	}
+}
+
+@layer utilities {
+	/* Custom animations */
+	.animate-fade-in {
+		animation: fadeIn 0.6s ease-out forwards;
+	}
+
+	.animate-slide-up {
+		animation: slideUp 0.8s ease-out forwards;
+	}
+
+	.animate-float {
+		animation: float 6s ease-in-out infinite;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}
