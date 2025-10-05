@@ -1,0 +1,44 @@
+[
+  {
+    "id": "8d582b10-2ed9-4294-b334-bf704e70eabf",
+    "title": "Getting Started with React and TypeScript",
+    "excerpt": "Learn how to combine React with TypeScript for building type-safe, scalable web applications.",
+    "content": "# Getting Started with React and TypeScript\n\n## Introduction\n\nReact and TypeScript are a powerful combination for building modern web applications. In this guide, we'll explore the fundamentals and best practices.\n\n## Why TypeScript?\n\nTypeScript adds static typing to JavaScript, which provides:\n\n- **Better IDE support** with autocomplete and inline documentation\n- **Catch errors early** during development\n- **Improved code maintainability** for large projects\n\n## Setting Up Your First Component\n\nHere's a simple example of a typed React component:\n\n```typescript\ninterface ButtonProps {\n  label: string;\n  onClick: () => void;\n  variant?: \"primary\" | \"secondary\";\n}\n\nconst Button: React.FC<ButtonProps> = ({ label, onClick, variant = \"primary\" }) => {\n  return (\n    <button \n      onClick={onClick}\n      className={`btn btn-${variant}`}\n    >\n      {label}\n    </button>\n  );\n};\n```\n\n## Working with State\n\nTypeScript makes state management more predictable:\n\n```typescript\nconst [count, setCount] = useState<number>(0);\nconst [user, setUser] = useState<User | null>(null);\n```\n\n## Conclusion\n\nThe combination of React and TypeScript creates a robust development experience that scales well with your application.",
+    "thumbnail_url": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop",
+    "author_id": "53fb7372-2886-42e8-840c-49d9806145d5",
+    "published": true,
+    "created_at": "2025-10-02T08:58:41.951128+00:00",
+    "updated_at": "2025-10-02T08:58:41.951128+00:00",
+    "profiles": {
+      "full_name": "Tasbih Ahmed"
+    }
+  },
+  {
+    "id": "9add6638-fb7c-4d38-99c7-2905df5f49c3",
+    "title": "Modern CSS Techniques with Tailwind",
+    "excerpt": "Discover how Tailwind CSS utility-first approach can speed up your development workflow.",
+    "content": "# Modern CSS Techniques with Tailwind\n\n## The Utility-First Approach\n\nTailwind CSS revolutionizes how we write styles by providing utility classes that can be composed to build any design.\n\n### Key Benefits\n\n1. **Rapid Development** - No need to write custom CSS\n2. **Consistency** - Design system built-in\n3. **Responsive Design** - Mobile-first approach\n\n## Responsive Design Made Easy\n\n```html\n<div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4\">\n  <Card />\n  <Card />\n  <Card />\n</div>\n```\n\n## Custom Design Tokens\n\nDefine your design system in `tailwind.config.ts`:\n\n```typescript\nexport default {\n  theme: {\n    extend: {\n      colors: {\n        primary: \"hsl(var(--primary))\",\n        secondary: \"hsl(var(--secondary))\",\n      },\n      animation: {\n        \"fade-in\": \"fadeIn 0.5s ease-in-out\",\n      },\n    },\n  },\n};\n```\n\n## Dark Mode Support\n\nTailwind makes dark mode simple:\n\n```html\n<div className=\"bg-white dark:bg-gray-900 text-gray-900 dark:text-white\">\n  Content adapts to theme\n</div>\n```\n\n## Conclusion\n\nTailwind CSS provides a modern, efficient way to build beautiful interfaces without leaving your HTML.",
+    "thumbnail_url": "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&h=400&fit=crop",
+    "author_id": "53fb7372-2886-42e8-840c-49d9806145d5",
+    "published": true,
+    "created_at": "2025-10-02T08:58:41.951128+00:00",
+    "updated_at": "2025-10-02T08:58:41.951128+00:00",
+    "profiles": {
+      "full_name": "Tasbih Ahmed"
+    }
+  },
+  {
+    "id": "ea387d02-5b50-48c5-8317-94c2a51b88a8",
+    "title": "Building Scalable APIs with Supabase",
+    "excerpt": "Learn how to leverage Supabase for building powerful, scalable backend APIs.",
+    "content": "[Full content available - contains SQL examples, TypeScript code, and edge function examples]",
+    "thumbnail_url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop",
+    "author_id": "53fb7372-2886-42e8-840c-49d9806145d5",
+    "published": true,
+    "created_at": "2025-10-02T08:58:41.951128+00:00",
+    "updated_at": "2025-10-02T08:58:41.951128+00:00",
+    "profiles": {
+      "full_name": "Tasbih Ahmed"
+    }
+  }
+]
