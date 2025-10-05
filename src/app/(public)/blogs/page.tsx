@@ -95,6 +95,9 @@ const Blogs = () => {
 													src={blog.thumbnail_url}
 													alt={blog.title}
 													className="w-full h-full object-cover"
+													width={256}
+													height={256}
+													unoptimized
 												/>
 											</div>
 										)}
