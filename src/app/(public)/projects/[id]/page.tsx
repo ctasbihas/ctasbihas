@@ -1,6 +1,6 @@
 "use client";
 
-import { allProjects } from "../../../../public/assets/data";
+import { allProjects } from "../../../../../public/assets/data";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, ExternalLink, Github } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { allProjects } from "../../../public/assets/data";
+import { allProjects } from "../../../../public/assets/data";
 
 const categories = ["All", "Full Stack", "Frontend", "Backend"];
 
